@@ -3,7 +3,10 @@ function main() {
         console.log("no website provided")
         process.exit(1)
     }
-    
+     
+    for(const arg of process.argv) {
+        console.log(arg)
+    }
     console.log("starting crawl")
 }
 
