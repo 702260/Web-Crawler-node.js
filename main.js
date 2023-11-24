@@ -8,8 +8,9 @@ function main() {
         console.log("too many command line args")
         process.exit(1)
     }
-   
-    console.log("starting crawl")
+   const baseURL = process.argv[2]
+
+    console.log(`starting crawl of ${baseURL}`)
 }
 
 main()
