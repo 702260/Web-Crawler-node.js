@@ -1,6 +1,9 @@
 const {JSDOM} = require('jsdom')
 
-
+function crawlPage(currentURL)
+             {
+      console.log(`actively crawling ${currentURL}`)         
+             }
 
 function getURLsFromHTML(htmlBody, baseURL){
     const urls = []
