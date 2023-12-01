@@ -1,8 +1,12 @@
 const {JSDOM} = require('jsdom')
 
-function crawlPage(currentURL)
+async function crawlPage(currentURL)
              {
-      console.log(`actively crawling ${currentURL}`)         
+      console.log(`actively crawling: ${currentURL}`)    
+      
+      const resp = await fetch(currentURL)
+
+      console.log(resp.text())
              }
 
 function getURLsFromHTML(htmlBody, baseURL){
