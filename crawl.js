@@ -51,5 +51,6 @@ function normalizeURL(urlString)
             module.exports =  {
 
                normalizeURL, 
-               getURLsFromHTML
+               getURLsFromHTML,
+               crawlPage
             }  
