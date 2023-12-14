@@ -3,8 +3,12 @@ const {JSDOM} = require('jsdom')
 async function crawlPage(currentURL)
              {
       console.log(`actively crawling: ${currentURL}`)    
-          try {
+          try {      
             const resp = await fetch(currentURL)
+                 if(resp.status > 399) {
+                    console.log(`error in fetch with status code: ${resp.status} on page: ${currentURL}`)
+                     return
+                 }
             console.log(resp.text())
               } catch(err)
                  {
