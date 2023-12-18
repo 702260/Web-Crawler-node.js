@@ -9,7 +9,9 @@ async function crawlPage(currentURL)
                     console.log(`error in fetch with status code: ${resp.status} on page: ${currentURL}`)
                      return
                  }
-            console.log(resp.text())
+             
+            const contentType = resp.headers.get("content-type")     
+            console.log(await resp.text())
               } catch(err)
                  {
                   console.log(`error in fetch: ${err.message}, on page: ${currentURL}`);
