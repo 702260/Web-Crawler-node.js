@@ -8,6 +8,13 @@ async function crawlPage(baseURL, currentURL, pages)
                if(baseURLObj.hostname !== currentURLObj.hostname){
                       return pages
                }
+         const normalizedcurrentURL = normalizeURL(currentURL)
+             if(pages[normalizedCurrentURL] > 0) {
+               pages[normalizedCurrentURL]++
+               return 
+             }
+                 
+
           try {      
             const resp = await fetch(currentURL)
                  if(resp.status > 399) {
