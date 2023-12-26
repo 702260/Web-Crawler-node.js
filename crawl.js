@@ -2,7 +2,7 @@ const {JSDOM} = require('jsdom')
 
 async function crawlPage(baseURL, currentURL, pages)
              {
-      console.log(`actively crawling: ${currentURL}`) 
+      
          const baseURLObj = new URL(baseURL)   
          const currentURLObj = new URL(currentURL)
                if(baseURLObj.hostname !== currentURLObj.hostname){
@@ -11,10 +11,13 @@ async function crawlPage(baseURL, currentURL, pages)
          const normalizedcurrentURL = normalizeURL(currentURL)
              if(pages[normalizedCurrentURL] > 0) {
                pages[normalizedCurrentURL]++
-               return 
+               return pages
              }
                  
+             pages[normalizedCurrentURL] = 1
 
+             console.log(`actively crawling: ${currentURL}`)
+             
           try {      
             const resp = await fetch(currentURL)
                  if(resp.status > 399) {
