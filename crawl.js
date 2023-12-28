@@ -30,8 +30,12 @@ async function crawlPage(baseURL, currentURL, pages)
                console.log(`non html response, content type: ${contentType}, on page: ${currentURL}`)
                    return 
               }
-                     
-            console.log(await resp.text())
+             
+              const htmlBody = await resp.text()
+
+            const  nextURLs = getURLsFromHTML(htmlBody, baseURL)
+
+        
               } catch(err)
                  {
                   console.log(`error in fetch: ${err.message}, on page: ${currentURL}`);
