@@ -6,6 +6,7 @@ function sortPages(pages)
              bHits = b[1]
              return b[1] - a[1]
        })
+            return pagesArr
       }
       
       module.exports = {
