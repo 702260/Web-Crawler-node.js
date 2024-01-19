@@ -1,4 +1,10 @@
-function sortPages(pages)
+function printReport(pages)
+      {
+        console.log("=========")
+        console.log("REPORT")
+      }
+     
+      function sortPages(pages)
       {
        const pagesArr = Object.entries(pages)
        pagesArr.sort( (a,b)=> {
@@ -11,4 +17,4 @@ function sortPages(pages)
       
       module.exports = {
          sortPages 
-      }
+      }     
